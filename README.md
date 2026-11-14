@@ -38,7 +38,7 @@ Ava was built as an engineering solution to these three constraints:
 ## ⚡ Core Architecture & Highlights
 
 * **In-Memory Document Ingestion & Takeaway Exporter (`study_notebook/`)**: Drop study PDFs, Markdown notes, or cheat sheets into `references/`. Ava parses them into RAM on demand via PyMuPDF and computes sparse TF-IDF cosine similarity in < 10 ms. Export session takeaways to `takeaways/` or generate active recall quiz banks in `quizzes/` formatted for your personal notes or Google NotebookLM.
-* **Hardware-Aware Full-Duplex Audio**: Direct Windows registry querying identifies when headphones (such as the Logitech G522 LIGHTSPEED) are connected, automatically arming full-duplex voice barge-in so the operator can speak over Ava at any point without acoustic feedback.
+* **Hardware-Aware Full-Duplex Audio**: Direct Windows registry querying identifies when headphones are connected, automatically arming full-duplex voice barge-in so the operator can speak over Ava at any point without acoustic feedback.
 * **Reactive Web Ops-Center HUD**: A 60 FPS HTML5 canvas tactical dashboard displaying real-time VRAM allocation, audio connection status, disk budget telemetry, and quick-action chips.
 * **Dataset Accumulator**: Mentor dialogues are continuously validated and logged to `training_logs/mentor_dataset.jsonl` for future fine-tuning.
 
