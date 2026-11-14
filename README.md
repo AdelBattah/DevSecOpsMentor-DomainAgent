@@ -93,6 +93,39 @@ python src/mentor.py
 
 ---
 
+## 🛠️ Adapting to Any Learning Domain
+
+While pre-configured for DevSecOps and Cloud Security, this architecture is a **modular, domain-agnostic engine**. You can adapt Ava to mentor you in any discipline (e.g., Backend Go, Kubernetes SRE, iOS Swift, Embedded C++, Machine Learning, or Systems Programming) in three steps:
+
+### 1. Update Your Target Profile & Audit Rules
+Edit [`mentor_profile.md`](mentor_profile.md) with your specific learning target and domain guardrails:
+```markdown
+# Mentee Profile & Pedagogical Guidelines
+
+## Candidate Background
+- **Current Skills**: Python basics, Git, Linux command line.
+- **Target Career Objective**: Remote Backend Go & Distributed Systems Engineer.
+
+## Domain-Specific Anti-Patterns to Audit
+- Ignored error returns (`_ = err`).
+- Goroutine memory leaks or missing sync primitives (`sync.WaitGroup`, channels).
+- Unindexed database queries and lack of connection pooling.
+- Missing context cancellation (`context.WithTimeout`).
+```
+
+### 2. Drop Domain References into the In-Memory Notebook
+Place official documentation PDFs, language specifications, book chapters, or cheat sheets into:
+```text
+study_notebook/references/
+```
+Ava automatically extracts and vectors them in RAM on the next turn via PyMuPDF and sparse TF-IDF (< 10 ms). **No database setup or code changes required.**
+
+### 3. (Optional) Swap Local Models or Add Custom Labs
+* In `src/config.py`, change `CODER_MODEL` to any specialized model in your Ollama library (e.g., `deepseek-coder`, `starcoder2`, or `llama3.2`).
+* In `src/labs/`, create Python grader scripts to validate domain-specific terminal commands, configurations, or syntax.
+
+---
+
 ## 📂 Repository Layout
 
 ```text
