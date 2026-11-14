@@ -1,0 +1,36 @@
+# Environment variables & secrets (NEVER COMMIT)
+.env
+*.env
+.env.*
+
+# Python caches & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+env/
+venv/
+ENV/
+
+# Temporary audio & scratch files
+*.mp3
+*.wav
+*.tmp
+scratch/
+temp/
+
+# Log files & runtime databases
+*.log
+*.sqlite3
+
+# OS / Editor metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local agent metadata
+.agent/
